@@ -51,9 +51,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-        {/* ===== 左侧：应用介绍 ===== */}
-        <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 md:p-16 flex flex-col justify-center">
+      {/* 核心修改：把 grid-cols-2 改成 grid-cols-10，分别控制左右占 3/10 和 7/10 */}
+      <div className="grid grid-cols-1 lg:grid-cols-10 min-h-screen">
+        {/* ===== 左侧：应用介绍 - 占 3 份 ===== */}
+        <div className="lg:col-span-3 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 md:p-16 flex flex-col justify-center">
           <div className="max-w-md">
             {/* Logo + 产品名 */}
             <div className="mb-8">
@@ -63,7 +64,7 @@ export default function Home() {
                 </div>
               </div>
               <h1 className="text-5xl font-bold text-gray-900 mb-3">清灰灰</h1>
-              <p className="text-xl text-gray-600">让你的收藏夹焕然一新！</p>
+              <p className="text-xl text-gray-600">AI助手，让你的收藏夹焕然一新！</p>
             </div>
 
             {/* 功能卡片 */}
@@ -113,8 +114,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ===== 右侧：登入表单 ===== */}
-        <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
+        {/* ===== 右侧：登入表单 - 占 7 份 ===== */}
+        <div className="lg:col-span-7 bg-white p-8 md:p-16 flex flex-col justify-center">
           <div className="max-w-md w-full mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">欢迎回来</h2>
             <p className="text-gray-600 mb-8">登入你的账户继续管理收藏</p>
